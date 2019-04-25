@@ -28,8 +28,5 @@ type PreviewAction =
   | { type: 'SET_PAGE_COUNT', pageCount: number }
   | { type: 'PREV_PAGE' }
   | { type: 'NEXT_PAGE' }
-  | { type: 'DOWNLOAD_SOURCE_REQUEST' }
-  | { type: 'DOWNLOAD_SOURCE_SUCCESS' }
-  | { type: 'DOWNLOAD_SOURCE_FAILURE' }
 
 export type { PreviewState, PreviewAction }

@@ -87,19 +87,6 @@ function preview(state: State = initialState, action: Action) {
         }
       }
 
-    case 'DOWNLOAD_SOURCE_REQUEST':
-      return {
-        ...state,
-        isDownloading: true
-      }
-
-    case 'DOWNLOAD_SOURCE_SUCCESS':
-    case 'DOWNLOAD_SOURCE_FAILURE':
-      return {
-        ...state,
-        isDownloading: false
-      }
-
     default:
       return state
   }

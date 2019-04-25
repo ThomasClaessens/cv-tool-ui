@@ -124,7 +124,6 @@ class Preview extends Component<Props, State> {
       resumeURL,
       jsonURL,
       status,
-      downloadSource,
       hideOnMobile
     } = this.props
     const { currPage } = this.state
@@ -134,7 +133,6 @@ class Preview extends Component<Props, State> {
         <Toolbar
           resumeURL={resumeURL || BlankPDF}
           jsonURL={jsonURL}
-          downloadSource={downloadSource}
           currPage={currPage}
           prevPage={this.prevPage}
           nextPage={this.nextPage}

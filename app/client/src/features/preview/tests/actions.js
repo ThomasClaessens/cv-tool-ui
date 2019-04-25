@@ -7,9 +7,6 @@ import {
   generateResumeRequest,
   generateResumeSuccess,
   generateResumeFailure,
-  downloadSourceRequest,
-  downloadSourceSuccess,
-  downloadSourceFailure
 } from '../actions'
 import type { PreviewAction as Action } from '../types'
 
@@ -38,24 +35,6 @@ describe('actions', () => {
   it('can fail at resume generation', () => {
     const expected: Action = { type: 'GENERATE_RESUME_FAILURE' }
     const actual: Action = generateResumeFailure()
-    expect(actual).toEqual(expected)
-  })
-
-  it('can request source download', () => {
-    const expected: Action = { type: 'DOWNLOAD_SOURCE_REQUEST' }
-    const actual: Action = downloadSourceRequest()
-    expect(actual).toEqual(expected)
-  })
-
-  it('can succeed at source download', () => {
-    const expected: Action = { type: 'DOWNLOAD_SOURCE_SUCCESS' }
-    const actual: Action = downloadSourceSuccess()
-    expect(actual).toEqual(expected)
-  })
-
-  it('can fail at source download', () => {
-    const expected: Action = { type: 'DOWNLOAD_SOURCE_FAILURE' }
-    const actual: Action = downloadSourceFailure()
     expect(actual).toEqual(expected)
   })
 })

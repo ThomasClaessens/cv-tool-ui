@@ -78,67 +78,10 @@ function generateResume(resumeData: FormValuesWithSectionOrder): AsyncAction {
   }
 }
 
-function downloadSourceRequest(): Action {
-  return {
-    type: 'DOWNLOAD_SOURCE_REQUEST'
-  }
-}
-
-function downloadSourceSuccess(): Action {
-  return {
-    type: 'DOWNLOAD_SOURCE_SUCCESS'
-  }
-}
-
-function downloadSourceFailure(): Action {
-  return {
-    type: 'DOWNLOAD_SOURCE_FAILURE'
-  }
-}
-
-function downloadSource(): AsyncAction {
-  return async (dispatch, getState) => {
-    const { fetch } = window
-    const { resume, isDownloading, data } = getState().preview
-
-    if (
-      isDownloading ||
-      resume.status === 'pending' ||
-      data.json == null ||
-      Object.keys(data.json).length === 0
-    ) {
-      return
-    }
-
-    dispatch(downloadSourceRequest())
-
-    const req = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data.json),
-      credentials: 'same-origin'
-    }
-
-    const res = await fetch('/api/generate/source', req)
-    const blob = await res.blob()
-
-    if (!res.ok) {
-      dispatch(downloadSourceFailure())
-    } else {
-      FileSaver.saveAs(blob, 'resume.zip')
-      dispatch(downloadSourceSuccess())
-    }
-  }
-}
-
 export {
   clearPreview,
   generateResume,
   generateResumeRequest,
   generateResumeSuccess,
-  generateResumeFailure,
-  downloadSourceRequest,
-  downloadSourceSuccess,
-  downloadSourceFailure,
-  downloadSource
+  generateResumeFailure
 }

@@ -7,10 +7,7 @@ import {
   clearPreview,
   generateResumeRequest,
   generateResumeSuccess,
-  generateResumeFailure,
-  downloadSourceRequest,
-  downloadSourceSuccess,
-  downloadSourceFailure
+  generateResumeFailure
 } from '../actions'
 import type { PreviewState as State } from '../types'
 
@@ -175,72 +172,6 @@ describe('preview reducer', () => {
         ...state.resume,
         status: 'failure'
       }
-    }
-
-    const actual: State = reducer(state, action)
-
-    expect(actual).toEqual(expected)
-  })
-
-  it('should handle DOWNLOAD_SOURCE_REQUEST', () => {
-    const state: State = {
-      isDownloading: false,
-      data: {},
-      resume: {
-        pageCount: 1,
-        page: 1
-      }
-    }
-
-    const action = downloadSourceRequest()
-
-    const expected: State = {
-      ...state,
-      isDownloading: true
-    }
-
-    const actual: State = reducer(state, action)
-
-    expect(actual).toEqual(expected)
-  })
-
-  it('should handle DOWNLOAD_SOURCE_SUCCESS', () => {
-    const state: State = {
-      isDownloading: false,
-      data: {},
-      resume: {
-        pageCount: 1,
-        page: 1
-      }
-    }
-
-    const action = downloadSourceSuccess()
-
-    const expected: State = {
-      ...state,
-      isDownloading: false
-    }
-
-    const actual: State = reducer(state, action)
-
-    expect(actual).toEqual(expected)
-  })
-
-  it('should handle DOWNLOAD_SOURCE_FAILURE', () => {
-    const state: State = {
-      isDownloading: false,
-      data: {},
-      resume: {
-        pageCount: 1,
-        page: 1
-      }
-    }
-
-    const action = downloadSourceFailure()
-
-    const expected: State = {
-      ...state,
-      isDownloading: false
     }
 
     const actual: State = reducer(state, action)

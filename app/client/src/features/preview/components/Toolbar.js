@@ -149,7 +149,6 @@ function Toolbar({
   resumeURL,
   jsonURL,
   currPage,
-  downloadSource,
   prevPage,
   nextPage,
   print,
@@ -161,9 +160,6 @@ function Toolbar({
       <ButtonGroup>
         <ToolButton href={resumeURL} download="resume.pdf">
           <Icon type="file_download" /> PDF
-        </ToolButton>
-        <ToolButton onClick={downloadSource}>
-          <Icon type="file_download" /> LaTeX
         </ToolButton>
         <ToolButton href={jsonURL} download="resume.json">
           <Icon type="file_download" /> JSON
