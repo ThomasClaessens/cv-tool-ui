@@ -7,7 +7,6 @@ import { connect } from 'react-redux'
 import { Document, Page } from 'react-pdf/build/entry.webpack'
 import styled from 'styled-components'
 import { Toolbar, LoadingBar } from '.'
-import { downloadSource } from '../actions'
 import { Loader } from '../../../common/components'
 import { sizes } from '../../../common/theme'
 import type { State as ReduxState } from '../../../app/types'
@@ -42,8 +41,7 @@ type Props = {
   resumeURL?: string,
   jsonURL?: string,
   status?: 'pending' | 'success' | 'failure',
-  hideOnMobile?: boolean,
-  downloadSource: () => Promise<void>
+  hideOnMobile?: boolean
 }
 
 type State = {
@@ -170,8 +168,6 @@ function mapState(state: ReduxState) {
   }
 }
 
-const mapActions = {
-  downloadSource
-}
+const mapActions = {}
 
 export default connect(mapState, mapActions)(Preview)

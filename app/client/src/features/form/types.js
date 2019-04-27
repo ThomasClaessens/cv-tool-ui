@@ -42,9 +42,14 @@ type Job = {
   highlights: Array<?string>
 }
 
+type Keyword = {
+  name: string,
+  level: number
+}
+
 type Skill = {
   name?: ?string,
-  keywords: Array<?string>
+  keywords: Array<?Keyword>
 }
 
 type Project = {

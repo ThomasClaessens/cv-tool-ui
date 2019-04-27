@@ -138,7 +138,6 @@ type Props = {
   resumePdfURL: string,
   resumeDocXURL: string,
   jsonURL?: string,
-  downloadSource: () => Promise<void>,
   prevPage: () => void,
   nextPage: () => void,
   zoomIn: () => void,
