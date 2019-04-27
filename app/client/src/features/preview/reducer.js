@@ -47,7 +47,13 @@ function preview(state: State = initialState, action: Action) {
         resume: {
           ...state.resume,
           status: 'success',
-          url: action.resumeURL
+          url: action.resumePdfURL
+        },
+        data: {
+          ...state.data,
+          status: 'success',
+          url: action.resumePdfURL,
+          docXURL: action.resumeDocXURL
         }
       }
 

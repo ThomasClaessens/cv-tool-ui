@@ -19,7 +19,7 @@ import type { SanitizedValues } from '../types'
  * @return The generated PDF.
  */
 
-function generatePDF(formData: SanitizedValues): Transform {
+function generateDocument(formData: SanitizedValues): Transform {
   const { texDoc, opts } = getTemplateData(formData)
   const pdf = latex(texDoc, opts)
 
@@ -80,4 +80,4 @@ function makeReadme(template: number, cmd?: string = 'pdflatex'): string {
   `
 }
 
-export { generatePDF, generateSourceCode, makeReadme }
+export { generateDocument, generateSourceCode, makeReadme }

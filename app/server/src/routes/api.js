@@ -4,7 +4,7 @@
 
 import Router from 'koa-router'
 import formidable from 'koa2-formidable'
-import { generatePDF, generateSourceCode } from '../generator'
+import { generateDocument, generateSourceCode } from '../generator'
 import { sanitizer, jsonResume } from '../middleware'
 
 const router = new Router({ prefix: '/api' })
@@ -21,8 +21,17 @@ router.use('/upload', formidable(), jsonResume()) // Parse multipart/form-data
  */
 
 router.post('/generate/resume', async ({ request, response }) => {
-  response.body = generatePDF((request.body: any))
+  response.body = generateDocument((request.body: any))
   response.type = 'application/pdf'
+})
+
+/**
+ * Generate DOCX from form data
+ */
+
+router.post('/generate/resume?pdf=false', async ({ request, response }) => {
+  response.body = generateDocument((request.body: any))
+  response.type = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
 })
 
 /**
