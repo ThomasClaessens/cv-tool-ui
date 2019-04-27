@@ -15,6 +15,11 @@ function Profile() {
                         placeholder="John Smith"
                 />
                 <LabeledInput
+                    name="basics.jobTitle"
+                    label="Job Title"
+                    placeholder="Java Consultant"
+                />
+                <LabeledInput
                         name="basics.dateOfBirth"
                         label="Date Of Birth"
                         placeholder="01/01/1900"
