@@ -51,8 +51,10 @@ const initialState = {
     skills: [
       {
         name: '',
-        level: '',
-        keywords: ['']
+        keywords: [{
+          name: '',
+          level: 3
+        }]
       }
     ],
     projects: [
@@ -219,7 +221,10 @@ function form(state: FormState = initialState, action: Action): FormState {
           skills: [
             ...state.values.skills,
             {
-              keywords: ['']
+              keywords: [{
+                'name': '',
+                'level': 1
+              }]
             }
           ]
         }
@@ -249,7 +254,10 @@ function form(state: FormState = initialState, action: Action): FormState {
             ...state.values.skills.slice(0, action.index),
             {
               ...state.values.skills[action.index],
-              keywords: [...state.values.skills[action.index].keywords, '']
+              keywords: [...state.values.skills[action.index].keywords, {
+                'name': '',
+                'level': 1
+              }]
             },
             ...state.values.skills.slice(action.index + 1)
           ]

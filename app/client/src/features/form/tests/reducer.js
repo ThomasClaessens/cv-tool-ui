@@ -260,7 +260,10 @@ describe('form reducer', () => {
       ...initialState,
       values: {
         ...state.values,
-        skills: [{ keywords: [''] }]
+        skills: [{ keywords: [{
+            'name': '',
+            'level': 1
+        }] }]
       }
     }
 
@@ -274,8 +277,20 @@ describe('form reducer', () => {
       values: {
         ...initialState.values,
         skills: [
-          { name: 'Languages', keywords: ['JavaScript', 'Java'] },
-          { name: 'Frameworks', keywords: ['React', 'Redux'] }
+          { name: 'Languages', keywords: [{
+              'name': 'JavaScript',
+              'level': 3
+            }, {
+              'name': 'Java',
+              'level': 3
+            }] },
+          { name: 'Frameworks', keywords: [{
+              'name': 'React',
+              'level': 3
+            }, {
+              'name': 'Redux',
+              'level': 3
+            }] }
         ]
       }
     }
@@ -286,7 +301,13 @@ describe('form reducer', () => {
       ...initialState,
       values: {
         ...state.values,
-        skills: [{ name: 'Languages', keywords: ['JavaScript', 'Java'] }]
+        skills: [{ name: 'Languages', keywords: [{
+            'name': 'JavaScript',
+            'level': 3
+          }, {
+            'name': 'Java',
+            'level': 3
+          }] }]
       }
     }
 
@@ -300,8 +321,20 @@ describe('form reducer', () => {
       values: {
         ...initialState.values,
         skills: [
-          { name: 'Languages', keywords: ['JavaScript', 'Java'] },
-          { name: 'Frameworks', keywords: ['React', 'Redux'] }
+          { name: 'Languages', keywords: [{
+              'name': 'JavaScript',
+              'level': 3
+            }, {
+              'name': 'Java',
+              'level': 3
+            }] },
+          { name: 'Frameworks', keywords: [{
+              'name': 'React',
+              'level': 3
+            }, {
+              'name': 'Redux',
+              'level': 3
+            }] }
         ]
       }
     }
@@ -313,8 +346,23 @@ describe('form reducer', () => {
       values: {
         ...state.values,
         skills: [
-          { name: 'Languages', keywords: ['JavaScript', 'Java'] },
-          { name: 'Frameworks', keywords: ['React', 'Redux', ''] }
+          { name: 'Languages', keywords: [{
+              'name': 'JavaScript',
+              'level': 3
+            }, {
+              'name': 'Java',
+              'level': 3
+            }] },
+          { name: 'Frameworks', keywords: [{
+              'name': 'React',
+              'level': 3
+            }, {
+              'name': 'Redux',
+              'level': 3
+            }, {
+              'name': '',
+              'level': 3
+            }] }
         ]
       }
     }
@@ -329,8 +377,20 @@ describe('form reducer', () => {
       values: {
         ...initialState.values,
         skills: [
-          { name: 'Languages', keywords: ['JavaScript', 'Java'] },
-          { name: 'Frameworks', keywords: ['React', 'Redux'] }
+          { name: 'Languages', keywords: [{
+              'name': 'JavaScript',
+              'level': 3
+            }, {
+              'name': 'Java',
+              'level': 3
+            }] },
+          { name: 'Frameworks', keywords: [{
+              'name': 'React',
+              'level': 3
+            }, {
+              'name': 'Redux',
+              'level': 3
+            }] }
         ]
       }
     }
@@ -342,8 +402,17 @@ describe('form reducer', () => {
       values: {
         ...state.values,
         skills: [
-          { name: 'Languages', keywords: ['JavaScript'] },
-          { name: 'Frameworks', keywords: ['React', 'Redux'] }
+          { name: 'Languages', keywords: [{
+              'name': 'JavaScript',
+              'level': 3
+            }] },
+          { name: 'Frameworks', keywords: [{
+              'name': 'React',
+              'level': 3
+            }, {
+              'name': 'Redux',
+              'level': 3
+            }] }
         ]
       }
     }

@@ -59,8 +59,10 @@ describe('preview reducer', () => {
           skills: [
             {
               name: '',
-              level: '',
-              keywords: ['']
+              keywords: [{
+                name: '',
+                level: 1
+              }]
             }
           ],
           projects: [

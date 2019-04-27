@@ -319,4 +319,7 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 
+## IntelliJ IDEA ##
+.idea/
+
 # End of https://www.gitignore.io/api/node,jspm,reactnative

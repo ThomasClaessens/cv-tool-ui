@@ -77,8 +77,10 @@ describe('actions', () => {
       skills: [
         {
           name: '',
-          level: '',
-          keywords: ['']
+          keywords: [{
+            name: '',
+            level: 3
+          }]
         }
       ],
       projects: [
