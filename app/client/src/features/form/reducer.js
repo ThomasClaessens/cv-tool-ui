@@ -223,7 +223,7 @@ function form(state: FormState = initialState, action: Action): FormState {
             {
               keywords: [{
                 'name': '',
-                'level': 1
+                'level': 3
               }]
             }
           ]
@@ -256,7 +256,7 @@ function form(state: FormState = initialState, action: Action): FormState {
               ...state.values.skills[action.index],
               keywords: [...state.values.skills[action.index].keywords, {
                 'name': '',
-                'level': 1
+                'level': 3
               }]
             },
             ...state.values.skills.slice(action.index + 1)

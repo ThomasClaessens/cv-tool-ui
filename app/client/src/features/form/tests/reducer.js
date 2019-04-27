@@ -262,7 +262,7 @@ describe('form reducer', () => {
         ...state.values,
         skills: [{ keywords: [{
             'name': '',
-            'level': 1
+            'level': 3
         }] }]
       }
     }

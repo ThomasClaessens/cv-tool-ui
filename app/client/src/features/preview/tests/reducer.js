@@ -61,7 +61,7 @@ describe('preview reducer', () => {
               name: '',
               keywords: [{
                 name: '',
-                level: 1
+                level: 3
               }]
             }
           ],

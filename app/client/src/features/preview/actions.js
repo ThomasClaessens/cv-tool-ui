@@ -2,7 +2,6 @@
  * @flow
  */
 
-import FileSaver from 'file-saver'
 import { isEqual } from 'lodash'
 import type { PreviewAction as Action } from './types'
 import type { FormValuesWithSectionOrder } from '../form/types'
