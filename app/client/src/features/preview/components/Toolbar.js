@@ -137,7 +137,6 @@ type Props = {
   currPage: number,
   resumeURL: string,
   jsonURL?: string,
-  downloadSource: () => Promise<void>,
   prevPage: () => void,
   nextPage: () => void,
   zoomIn: () => void,
