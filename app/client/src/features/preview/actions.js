@@ -56,7 +56,7 @@ function generateResume(resumeData: FormValuesWithSectionOrder): AsyncAction {
     dispatch(generateResumeRequest())
 
     const { fetch, URL } = window
-    let jsonFiedResume = JSON.stringify(resumeData);
+    const jsonFiedResume = JSON.stringify(resumeData);
 
     const pdfRequest = {
       method: 'POST',

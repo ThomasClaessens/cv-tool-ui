@@ -8,7 +8,7 @@ type PreviewState = {
   data: {
     json?: FormValues,
     url?: string,
-    pdfURL?: string
+    pdfURL?: string,
     docXURL?: string
   },
   resume: {

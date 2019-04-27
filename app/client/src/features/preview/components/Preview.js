@@ -39,6 +39,7 @@ const ResumePage = styled(Page)`
 
 type Props = {
   resumeURL?: string,
+  resumeDocXURL?: string,
   jsonURL?: string,
   status?: 'pending' | 'success' | 'failure',
   hideOnMobile?: boolean
@@ -131,7 +132,7 @@ class Preview extends Component<Props, State> {
       <Wrapper hideOnMobile={hideOnMobile}>
         <Toolbar
           resumePdfURL={resumeURL || BlankPDF}
-          resumeDocXURL = {resumeDocXURL}
+          resumeDocXURL = {resumeDocXURL || ""}
           jsonURL={jsonURL}
           currPage={currPage}
           prevPage={this.prevPage}
