@@ -34,6 +34,21 @@ function Profile() {
         label="Link"
         placeholder="mycoolportfolio.com/myname"
       />
+      <LabeledInput
+        name="basics.dateOfBirth"
+        label="Date Of Birth"
+        placeholder="01/01/1900"
+      />
+      <LabeledInput
+        name="basics.citizenship"
+        label="Nationality"
+        placeholder="Martian"
+      />
+      <LabeledInput
+        name="basics.gender"
+        label="Gender"
+        placeholder="FluptyFloep"
+      />
     </Section>
   )
 }
