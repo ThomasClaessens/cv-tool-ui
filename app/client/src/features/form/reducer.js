@@ -19,12 +19,16 @@ const initialState = {
     },
     basics: {
       name: '',
-      email: '',
-      phone: '',
-      website: '',
+      jobTitle: '',
+      dateOfBirth: '',
+      gender: '',
+      citizenship: '',
       location: {
         address: ''
-      }
+      },
+      email: '',
+      phone: '',
+      website: ''
     },
     education: [
       {
