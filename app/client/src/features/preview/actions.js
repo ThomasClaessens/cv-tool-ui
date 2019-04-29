@@ -32,10 +32,11 @@ function generateResumeRequest(): Action {
   }
 }
 
-function generateResumeSuccess(resumeURL: string): Action {
+function generateResumeSuccess(resumePdfURL: string, resumeDocXURL: string): Action {
   return {
     type: 'GENERATE_RESUME_SUCCESS',
-    resumeURL
+    resumePdfURL,
+    resumeDocXURL
   }
 }
 
@@ -55,22 +56,36 @@ function generateResume(resumeData: FormValuesWithSectionOrder): AsyncAction {
     dispatch(generateResumeRequest())
 
     const { fetch, URL } = window
-    const request = {
+    const jsonFiedResume = JSON.stringify(resumeData);
+
+    const pdfRequest = {
       method: 'POST',
       headers: {
         Accept: 'application/pdf',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(resumeData)
+      body: jsonFiedResume
+    }
+    const docXRequest = {
+      method: 'POST',
+      headers: {
+        Accept: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'Content-Type': 'application/json'
+      },
+      body: jsonFiedResume
     }
 
     try {
-      const response = await fetch('/api/generate/resume', request)
-      const blob = await response.blob()
-      const url = URL.createObjectURL(blob)
+      const pdfResponse = await fetch('/api/generate/resume', pdfRequest)
+      const pdfBlob = await pdfResponse.blob()
+      const pdfUrl = URL.createObjectURL(pdfBlob)
+      const docXResponse = await fetch('/api/generate/resume?pdf=false', docXRequest)
+      const docXBlob = await docXResponse.blob()
+      const docXUrl = URL.createObjectURL(docXBlob)
+
 
       dispatch(saveResumeData(resumeData))
-      dispatch(generateResumeSuccess(url))
+      dispatch(generateResumeSuccess(pdfUrl, docXUrl))
     } catch (err) {
       dispatch(generateResumeFailure())
     }

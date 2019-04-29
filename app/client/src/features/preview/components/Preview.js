@@ -39,6 +39,7 @@ const ResumePage = styled(Page)`
 
 type Props = {
   resumeURL?: string,
+  resumeDocXURL?: string,
   jsonURL?: string,
   status?: 'pending' | 'success' | 'failure',
   hideOnMobile?: boolean
@@ -120,6 +121,7 @@ class Preview extends Component<Props, State> {
   render() {
     const {
       resumeURL,
+      resumeDocXURL,
       jsonURL,
       status,
       hideOnMobile
@@ -129,7 +131,8 @@ class Preview extends Component<Props, State> {
     return (
       <Wrapper hideOnMobile={hideOnMobile}>
         <Toolbar
-          resumeURL={resumeURL || BlankPDF}
+          resumePdfURL={resumeURL || BlankPDF}
+          resumeDocXURL = {resumeDocXURL || ""}
           jsonURL={jsonURL}
           currPage={currPage}
           prevPage={this.prevPage}
@@ -158,7 +161,8 @@ class Preview extends Component<Props, State> {
 
 function mapState(state: ReduxState) {
   return {
-    resumeURL: state.preview.resume.url,
+    resumeURL: state.preview.data.url,
+    resumeDocXURL: state.preview.data.docXURL,
     jsonURL: state.preview.data.url,
     page: state.preview.resume.page,
     status: state.preview.resume.status

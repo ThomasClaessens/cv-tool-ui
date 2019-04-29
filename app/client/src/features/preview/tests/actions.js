@@ -26,9 +26,10 @@ describe('actions', () => {
   it('can succeed at resume generation', () => {
     const expected: Action = {
       type: 'GENERATE_RESUME_SUCCESS',
-      resumeURL: '/fake/path.pdf'
+      resumePdfURL: '/fake/path.pdf',
+      resumeDocXURL: '/fake/path.docx'
     }
-    const actual: Action = generateResumeSuccess('/fake/path.pdf')
+    const actual: Action = generateResumeSuccess('/fake/path.pdf', '/fake/path.docx')
     expect(actual).toEqual(expected)
   })
 
