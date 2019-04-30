@@ -66,6 +66,11 @@ const initialState = {
         name: '',
         description: '',
         url: '',
+        startDate: '',
+        endDate: '',
+        jobTitle: '',
+        sector: '',
+        responsibilities: [''],
         keywords: ['']
       }
     ],
