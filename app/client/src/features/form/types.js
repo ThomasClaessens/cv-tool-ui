@@ -107,6 +107,8 @@ type FormAction =
   | { type: 'REMOVE_SKILL' }
   | { type: 'ADD_SKILL_KEYWORD', index: number }
   | { type: 'REMOVE_SKILL_KEYWORD', index: number }
+  | { type: 'ADD_RESPONSIBILITY', index: number }
+  | { type: 'REMOVE_RESPONSIBILITY' }
   | { type: 'ADD_PROJECT' }
   | { type: 'REMOVE_PROJECT' }
   | { type: 'ADD_PROJECT_KEYWORD', index: number }
