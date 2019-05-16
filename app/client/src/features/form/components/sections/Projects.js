@@ -37,7 +37,7 @@ function Projects({
                         name="headings.projects"
                         label="Section Heading"
                         placeholder="Projects"
-                />F
+                />
                 <Divider/>
                 {projects.map((project, i) => (
                         <Project
