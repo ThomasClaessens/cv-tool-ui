@@ -25,6 +25,7 @@ const MiniInput = Input.extend`
 type
 Props = {
     keywords: Array < ? string >,
+    responsibilities: Array < ? string >,
     index: number,
     addKeyword: (index: number) => void,
     removeKeyword: (index: number) => void,
