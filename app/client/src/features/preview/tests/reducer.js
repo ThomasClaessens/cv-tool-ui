@@ -140,10 +140,15 @@ describe('preview reducer', () => {
       }
     }
 
-    const action = generateResumeSuccess('/fake/resume.pdf')
+    const action = generateResumeSuccess('/fake/resume.pdf', '/fake/resume.docx')
 
     const expected: State = {
       ...state,
+      data: {
+        docXURL: '/fake/resume.docx',
+        status: 'success',
+        url: '/fake/resume.pdf'
+      },
       resume: {
         ...state.resume,
         status: 'success',

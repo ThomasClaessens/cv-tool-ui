@@ -135,7 +135,8 @@ const PageButton = Button.extend`
 
 type Props = {
   currPage: number,
-  resumeURL: string,
+  resumePdfURL: string,
+  resumeDocXURL: string,
   jsonURL?: string,
   prevPage: () => void,
   nextPage: () => void,
@@ -145,7 +146,8 @@ type Props = {
 }
 
 function Toolbar({
-  resumeURL,
+  resumePdfURL,
+  resumeDocXURL,
   jsonURL,
   currPage,
   prevPage,
@@ -157,8 +159,11 @@ function Toolbar({
   return (
     <Wrapper>
       <ButtonGroup>
-        <ToolButton href={resumeURL} download="resume.pdf">
+        <ToolButton href={resumePdfURL} download="resume.pdf">
           <Icon type="file_download" /> PDF
+        </ToolButton>
+        <ToolButton href={resumeDocXURL} download="resume.docx">
+          <Icon type="file_download" /> DOCX
         </ToolButton>
         <ToolButton href={jsonURL} download="resume.json">
           <Icon type="file_download" /> JSON
@@ -180,7 +185,10 @@ function Toolbar({
         <ToolButton onClick={zoomIn}>
           <Icon type="zoom_in" />
         </ToolButton>
-        <ToolButton onClick={() => print(resumeURL)}>
+        <ToolButton onClick={() => print(resumePdfURL)}>
+          <Icon type="print" />
+        </ToolButton>
+        <ToolButton onClick={() => print(resumeDocXURL)}>
           <Icon type="print" />
         </ToolButton>
       </ButtonGroup>

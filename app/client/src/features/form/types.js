@@ -56,7 +56,11 @@ type Project = {
   name?: ?string,
   description?: ?string,
   url?: ?string,
-  keywords: Array<?string>
+  keywords: Array<?string>,
+  responsibilities?: Array<?string>,
+  startDate?: ?string,
+  endDate?: ?string,
+  sector?: ? string
 }
 
 type Award = {
