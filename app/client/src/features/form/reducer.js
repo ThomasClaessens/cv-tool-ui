@@ -304,7 +304,7 @@ function form(state: FormState = initialState, action: Action): FormState {
                 ...state,
                 values: {
                     ...state.values,
-                    projects: [...state.values.projects, {keywords: ['']}]
+                    projects: [...state.values.projects, {keywords: [''], responsibilities: ['']}]
                 }
             }
         }
