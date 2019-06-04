@@ -60,7 +60,8 @@ type Project = {
   responsibilities?: Array<?string>,
   startDate?: ?string,
   endDate?: ?string,
-  sector?: ? string
+  sector?: ? string,
+  jobTitle?: ? string
 }
 
 type Award = {
